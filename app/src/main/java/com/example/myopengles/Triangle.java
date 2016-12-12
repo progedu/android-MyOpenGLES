@@ -6,6 +6,19 @@ import java.nio.FloatBuffer;
 
 public class Triangle {
 
+    private final String vertexShaderCode =
+            "attribute vec4 vPosition;" +
+                    "void main() {" +
+                    "  gl_Position = vPosition;" +
+                    "}";
+
+    private final String fragmentShaderCode =
+            "precision mediump float;" +
+                    "uniform vec4 vColor;" +
+                    "void main() {" +
+                    "  gl_FragColor = vColor;" +
+                    "}";
+
     private FloatBuffer vertexBuffer;
 
     // number of coordinates per vertex in this array
